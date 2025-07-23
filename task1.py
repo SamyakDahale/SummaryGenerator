@@ -42,11 +42,11 @@ def insert_sentences_to_db(docx_path):
     sentence_id = 1
 
     for para_num, para in enumerate(doc.paragraphs, start=1):
-        paragraph_no = f"P{para_num}"
+        paragraph_no = f"P{para_num}"  # String: P1, P2, P3...
         sentences = split_sentences(para.text)
         for sent_num, sentence in enumerate(sentences, start=1):
             idx = f"S{sentence_id}"
-            para_sent_idx = f"{paragraph_no}S{sent_num}"
+            para_sent_idx = sent_num  # INT: 1, 2, 3...
             cur.execute(insert_sql, (idx, sentence, paragraph_no, para_sent_idx))
             sentence_id += 1
 

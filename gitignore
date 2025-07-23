@@ -1,2 +1,8 @@
 myenv
 sample.docx
+
+myenv/
+__pycache__/
+*.pyc
+nltk_data/
+
